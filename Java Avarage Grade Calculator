@@ -1,0 +1,26 @@
+package joption;
+
+import javax.swing.JOptionPane;
+
+public class joptionpanee {
+	public static void main(String args[]) {
+		String midterm = JOptionPane.showInputDialog("Please enter your midterm note");
+		int m1 = Integer.parseInt(midterm);
+		while (m1 < 0 || m1 > 100) {
+			midterm = JOptionPane.showInputDialog("Please enter your midterm note again");
+			m1 = Integer.parseInt(midterm);
+			
+		}
+		{
+			String finalNote = JOptionPane.showInputDialog("Please enter your final note");
+			int f1 = Integer.parseInt(finalNote);
+			while (f1 < 0 || f1 > 100) {
+				finalNote = JOptionPane.showInputDialog("Please enter yout final note again");
+				f1 = Integer.parseInt(finalNote);
+			}
+			int note = (int) (m1 * 0.3 + f1 * 0.7);
+			String result = "Your note :" + note;
+			JOptionPane.showMessageDialog(null, result, "Your Note", JOptionPane.INFORMATION_MESSAGE);
+		}
+	}
+}
